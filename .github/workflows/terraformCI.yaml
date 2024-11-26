@@ -24,6 +24,8 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+    - name: List Provider Directory
+      run: ls -l .terraform/providers/registry.terraform.io/hashicorp/google/4.78.0/linux_amd64/
     - name: Terraform Init
       id: init
       run: terraform init -reconfigure -upgrade
